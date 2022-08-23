@@ -2,16 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/backgr"
+    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#494444"
+    android:background="@color/backgroundGray"
     tools:context=".MainActivity">
     <!--android:background="@color/grayCustom"-->
 
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/Division"
         android:layout_width="82dp"
         android:layout_height="40dp"
         android:onClick="findQuotient"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.419" />
 
     <Button
-        android:id="@+id/button19"
+        android:id="@+id/Multiply"
         android:layout_width="82dp"
         android:layout_height="40dp"
         android:onClick="findProduct"
@@ -37,7 +37,20 @@
         app:layout_constraintVertical_bias="0.419" />
 
     <Button
-        android:id="@+id/sendNumber"
+        android:id="@+id/Home"
+        android:layout_width="82dp"
+        android:layout_height="40dp"
+        android:onClick="findProduct"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <Button
+        android:id="@+id/Difference"
         android:layout_width="82dp"
         android:layout_height="40dp"
         android:onClick="findDifference"
@@ -50,7 +63,7 @@
         app:layout_constraintVertical_bias="0.301" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/Sum"
         android:layout_width="82dp"
         android:layout_height="40dp"
         android:onClick="findSum"
@@ -74,6 +87,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.607" />
+
+    <Button
+        android:id="@+id/Percent"
+        android:layout_width="82dp"
+        android:layout_height="40dp"
+        android:onClick="findModulus"
+        android:text="%"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.605" />
 
     <EditText
         android:id="@+id/num1ET"

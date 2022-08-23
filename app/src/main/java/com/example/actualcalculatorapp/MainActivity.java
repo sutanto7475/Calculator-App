@@ -3,8 +3,11 @@ package com.example.actualcalculatorapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -23,17 +26,11 @@ public class MainActivity extends AppCompatActivity {
         EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        double num1 = Integer.parseInt((number1ET.getText().toString()));
-        double num2 = Integer.parseInt((number2ET.getText().toString()));
-
-        if(number1ET.toString().isEmpty()){
-            num1 = 0;
+        if(TextUtils.isEmpty(number1ET.getText().toString())){
+            number1ET.setHint("Input a number");
         }
-        if(number2ET.toString().isEmpty()){
-            num2 = 0;
-        }
-
-
+        double num1 = Double.parseDouble((number1ET.getText().toString()));
+        double num2 = Double.parseDouble((number2ET.getText().toString()));
         double sum = num1+num2;
 
         numberSumTV.setText("" + sum);
@@ -44,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        double num1 = Integer.parseInt((number1ET.getText().toString()));
-        double num2 = Integer.parseInt((number2ET.getText().toString()));
+        double num1 = Double.parseDouble((number1ET.getText().toString()));
+        double num2 = Double.parseDouble((number2ET.getText().toString()));
         double product = (double)num1*num2;
 
         numberSumTV.setText("" + product);
@@ -55,12 +52,13 @@ public class MainActivity extends AppCompatActivity {
         EditText number1ET = findViewById(R.id.num1ET);
         EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
-
-        double num1 = Integer.parseInt((number1ET.getText().toString()));
-        double num2 = Integer.parseInt((number2ET.getText().toString()));
+        Button button = findViewById(R.id.Division);
+        double num1 = Double.parseDouble((number1ET.getText().toString()));
+        double num2 = Double.parseDouble((number2ET.getText().toString()));
         double quotient = (double)num1/num2;
 
         numberSumTV.setText("" + quotient);
+
     }
 
     public void findDifference(View view){
@@ -68,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
         EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        double num1 = Integer.parseInt((number1ET.getText().toString()));
-        double num2 = Integer.parseInt((number2ET.getText().toString()));
+        double num1 = Double.parseDouble((number1ET.getText().toString()));
+        double num2 = Double.parseDouble((number2ET.getText().toString()));
         double difference = num1-num2;
 
         numberSumTV.setText("" + difference);
@@ -77,10 +75,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void findAns(View view){
         EditText number1ET = findViewById(R.id.num1ET);
+        EditText number2Et = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
 
-        double ans = Integer.parseInt((numberSumTV.getText().toString()));
+        double ans = Double.parseDouble((numberSumTV.getText().toString()));
         number1ET.setText("" + ans);
+        number2Et.setText("");
+    }
+
+    public void findModulus(View view){
+        EditText number1ET = findViewById(R.id.num1ET);
+        EditText number2ET = findViewById(R.id.num2ET);
+        TextView numberSumTV = findViewById(R.id.resultTV);
+
+        double num1 = Double.parseDouble((number1ET.getText().toString()));
+        double num2 = Double.parseDouble((number2ET.getText().toString()));
+        double modulus = num1%num2;
+
+        numberSumTV.setText("" + modulus);
     }
 }
