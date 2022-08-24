@@ -16,7 +16,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-    public DecimalFormat dFormat = new DecimalFormat("#############.####");
+    public DecimalFormat dFormat = new DecimalFormat("#####.####");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
         EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
+        if(TextUtils.isEmpty(numberSumTV.getText().toString())){
+            numberSumTV.setText("Enter Two Numbers");
+            return;
+        }
         if(TextUtils.isEmpty(number1ET.getText().toString())){
             numberSumTV.setText("Enter Two Numbers");
             return;
@@ -125,9 +129,7 @@ public class MainActivity extends AppCompatActivity {
             numberSumTV.setText("Enter Two Numbers");
             return;
         }
-        if(TextUtils.isEmpty(numberSumTV.getText().toString())){
-            return;
-        }
+
 
 
         double ans = Double.parseDouble((numberSumTV.getText().toString()));
