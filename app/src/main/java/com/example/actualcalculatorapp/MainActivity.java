@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +17,11 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+    EditText number1ET = findViewById(R.id.num1ET);
+    EditText number2ET = findViewById(R.id.num2ET);
+    TextView numberSumTV = findViewById(R.id.resultTV);
+
+
     public DecimalFormat dFormat = new DecimalFormat("#####.####");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findSum(View view){
-        EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
-        TextView numberSumTV = findViewById(R.id.resultTV);
 
         if(TextUtils.isEmpty(number1ET.getText().toString())){
             numberSumTV.setText("Enter Two Numbers");
@@ -44,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findProduct(View view){
-        EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
-        TextView numberSumTV = findViewById(R.id.resultTV);
+
 
         if(TextUtils.isEmpty(number1ET.getText().toString())){
             numberSumTV.setText("Enter Two Numbers");
@@ -65,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findQuotient(View view){
-        EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
-        TextView numberSumTV = findViewById(R.id.resultTV);
+
 
         if(TextUtils.isEmpty(number1ET.getText().toString())){
             numberSumTV.setText("Enter Two Numbers");
@@ -92,9 +91,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findDifference(View view){
-        EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
-        TextView numberSumTV = findViewById(R.id.resultTV);
 
         if(TextUtils.isEmpty(number1ET.getText().toString())){
             numberSumTV.setText("Enter Two Numbers");
@@ -113,9 +109,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findAns(View view){
-        EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
-        TextView numberSumTV = findViewById(R.id.resultTV);
+
 
         if(TextUtils.isEmpty(numberSumTV.getText().toString())){
             numberSumTV.setText("Enter Two Numbers");
@@ -138,9 +132,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findModulus(View view){
-        EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
-        TextView numberSumTV = findViewById(R.id.resultTV);
 
         if(TextUtils.isEmpty(number1ET.getText().toString())){
             numberSumTV.setText("Enter Two Numbers");
@@ -159,9 +150,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findPower(View view){
-        EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
-        TextView numberSumTV = findViewById(R.id.resultTV);
 
         if(TextUtils.isEmpty(number1ET.getText().toString())){
             numberSumTV.setText("Enter Two Numbers");
@@ -177,6 +165,8 @@ public class MainActivity extends AppCompatActivity {
         double power = Math.pow(num1, num2);
 
         numberSumTV.setText("" + dFormat.format(power));
+
+
     }
 
     public void closeApp(View view){
@@ -184,9 +174,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearApp(View view){
-        EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
-        TextView numberSumTV = findViewById(R.id.resultTV);
 
         number1ET.setText("");
         number2ET.setText("");
