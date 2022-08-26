@@ -17,9 +17,9 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-    EditText number1ET = findViewById(R.id.num1ET);
-    EditText number2ET = findViewById(R.id.num2ET);
-    TextView numberSumTV = findViewById(R.id.resultTV);
+    EditText number1ET;
+    EditText number2ET;
+    TextView numberSumTV;
 
 
     public DecimalFormat dFormat = new DecimalFormat("#####.####");
@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        number1ET = findViewById(R.id.num1ET);
+        number2ET = findViewById(R.id.num2ET);
+        numberSumTV = findViewById(R.id.resultTV);
     }
 
     public void findSum(View view){
